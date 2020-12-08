@@ -39,8 +39,7 @@ jobs:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
         registry: docker.pkg.github.com
-        repository: guilhermelionzo/github-actions-for-packages/tic-tac-toe
-        tag_with_sha: true
+        repository: guilhermelionzo/github-actions-for-packages/tic-tac-toe:$(echo $GITHUB_SHA | head -c7)-dev
         
   test:
     runs-on: ubuntu-latest
